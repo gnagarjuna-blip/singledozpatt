@@ -1,196 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Dozen Pattern Tracker</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #0d1b2a; color: #e0e1dd; padding: 10px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        header { text-align: center; padding: 10px; }
-        h1 { color: #4cc9f0; font-size: 1.4rem; }
-        
-        /* Pattern Section */
-        .pattern-section {
-            background: rgba(76, 201, 240, 0.1);
-            border: 2px solid #4cc9f0;
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .pattern-display {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #72efdd;
-            margin: 5px 0;
-            letter-spacing: 3px;
-        }
-        .prediction-box {
-            display: flex;
-            justify-content: center;
-            margin-top: 8px;
-        }
-        .next-dz {
-            background: #f72585;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            box-shadow: 0 0 15px rgba(247, 37, 133, 0.6);
-            border: 2px solid white;
-        }
-
-        /* COMPACT NUMBER GRID */
-        .number-grid { 
-            display: grid; 
-            grid-template-columns: repeat(12, 1fr); 
-            gap: 4px; 
-            margin-bottom: 15px; 
-        }
-        .number-btn { 
-            aspect-ratio: 1; 
-            border: none; 
-            border-radius: 4px; 
-            cursor: pointer; 
-            color: white; 
-            font-weight: bold; 
-            font-size: 0.8rem; 
-        }
-        
-        .zero { background: #7209b7; } 
-        .even { background: #3a0ca3; } 
-        .odd { background: #4361ee; }
-
-        .results-section { background: rgba(13, 27, 42, 0.9); border-radius: 12px; padding: 12px; margin-bottom: 15px; border: 2px solid #1b4965; }
-        .section-title { color: #72efdd; margin-bottom: 8px; font-size: 0.9rem; text-align: center; border-bottom: 1px solid #4361ee; text-transform: uppercase; }
-        
-        .history-list { background: #1b263b; border-radius: 8px; padding: 10px; display: flex; flex-wrap: wrap; gap: 5px; max-height: 80px; overflow-y: auto; }
-        .history-item { background: #4361ee; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; }
-        
-        .input-row { display: flex; gap: 8px; margin-bottom: 15px; }
-        input { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #4361ee; background: #1b263b; color: white; font-size: 0.9rem; }
-        button.action { padding: 8px 12px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; font-size: 0.8rem; }
-        .load { background: #4361ee; color: white; } 
-        .clear { background: #f72585; color: white; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCL Offer Letter Download</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Roboto,system-ui,sans-serif}
+  body{background:linear-gradient(145deg,#f0f4fa 0%,#d9e2ef 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1.5rem}
+  .card{background:#fff;max-width:520px;width:100%;border-radius:2rem;box-shadow:0 25px 45px -12px rgba(0,20,60,.35),0 6px 18px rgba(0,0,0,.05);padding:2.5rem 2.2rem 2.2rem;border:1px solid rgba(255,255,255,.7)}
+  .logo-section{display:flex;align-items:center;gap:12px;margin-bottom:1.8rem}
+  .hcl-logo{background:#0a1e4a;color:#fff;font-weight:700;font-size:1.8rem;letter-spacing:1px;padding:.3rem .9rem;border-radius:10px;box-shadow:0 6px 14px rgba(10,30,74,.25)}
+  .logo-section span{font-size:1rem;color:#2c3e6d;font-weight:500;background:#eef3fc;padding:.3rem 1rem;border-radius:40px}
+  h1{font-size:1.9rem;font-weight:600;color:#0a1e4a;margin-bottom:.35rem}
+  .subhead{color:#4a5a7a;font-size:.96rem;margin-bottom:2.2rem;border-left:4px solid #0a1e4a;padding:.7rem 1rem;background:#f7faff;border-radius:0 8px 8px 0}
+  .subhead strong{color:#0a1e4a}
+  .form-group{margin-bottom:1.6rem}
+  label{display:block;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:#2c3e6d;margin-bottom:.5rem}
+  .input-wrapper{position:relative;display:flex;align-items:center}
+  .input-wrapper i{position:absolute;left:16px;font-style:normal;font-size:1.2rem;color:#7c8db0;pointer-events:none}
+  input{width:100%;padding:.95rem 1rem .95rem 2.8rem;font-size:1rem;border:1.8px solid #d0dbea;border-radius:18px;background:#fbfdff;color:#0a1e4a;font-weight:500;outline:none;transition:.2s}
+  input:focus{border-color:#0a1e4a;box-shadow:0 0 0 4px rgba(10,30,74,.12);background:#fff}
+  .password-hint{font-size:.8rem;color:#4e6b9b;margin-top:.4rem}
+  .btn{width:100%;background:#0a1e4a;color:#fff;font-weight:700;font-size:1.05rem;padding:1rem;border:none;border-radius:30px;cursor:pointer;box-shadow:0 12px 25px -8px rgba(10,30,74,.45);transition:.2s;margin:1.8rem 0 .8rem;display:flex;align-items:center;justify-content:center;gap:8px}
+  .btn:hover{background:#12306b;transform:translateY(-2px)}
+  .error-message,.success-message{padding:.9rem 1.2rem;border-radius:16px;font-size:.9rem;font-weight:500;margin-top:1rem;display:none;align-items:center;gap:10px}
+  .error-message{background:#fee9e7;color:#b33a2c;border-left:4px solid #b33a2c}
+  .success-message{background:#e0f0ea;color:#0f6e4a;border-left:4px solid #0f6e4a}
+  .error-message.show,.success-message.show{display:flex}
+  .footer-note{text-align:center;font-size:.75rem;color:#6a7c9c;margin-top:1.5rem;border-top:1px solid #e3eaf3;padding-top:1.2rem}
+  .download-link{display:inline-block;margin-top:.6rem;font-size:.95rem;color:#0a1e4a;font-weight:600;text-decoration:none;border-bottom:2px solid #0a1e4a;padding-bottom:2px}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Dozens Pattern Matcher</h1>
-        </header>
+<div class="card">
+  <div class="logo-section">
+    <div class="hcl-logo">HCL</div>
+    <span>Tech Services</span>
+  </div>
+  <h1>Offer Letter</h1>
+  <div class="subhead"><strong>Private &amp; confidential</strong> — Candidate access only</div>
 
-        <div class="pattern-section">
-            <div class="section-title">Current 3-Dozen Pattern</div>
-            <div id="currentPattern" class="pattern-display">WAITING...</div>
-            <div class="section-title">History Result: Next 1 Dozen</div>
-            <div id="predictionResults" class="prediction-box">
-                <span style="color: #8d99ae; font-style: italic; font-size: 0.8rem;">Input 3 numbers to see match...</span>
-            </div>
-        </div>
-
-        <div class="input-section">
-            <div class="input-row">
-                <input type="text" id="initialInput" placeholder="Paste history (e.g. 12,23,1...)">
-                <button onclick="loadNumbers()" class="action load">Load</button>
-                <button onclick="clearAll()" class="action clear">Clear</button>
-            </div>
-        </div>
-
-        <div class="number-grid" id="numberGrid"></div>
-
-        <div class="results-section">
-            <div class="section-title">Number History</div>
-            <div id="historyList" class="history-list"></div>
-        </div>
+  <div class="form-group">
+    <label for="email">Gmail ID</label>
+    <div class="input-wrapper">
+      <i>✉️</i>
+      <input type="email" id="email" placeholder="vivektolada@gmail.com" value="vivektolada@gmail.com">
     </div>
+  </div>
 
-    <script>
-        let history = [];
+  <div class="form-group">
+    <label for="password">Password</label>
+    <div class="input-wrapper">
+      <i>🔒</i>
+      <input type="password" id="password" placeholder="offerletter" value="offerletter">
+    </div>
+    <div class="password-hint">ℹ️ Default password: <strong>offerletter</strong></div>
+  </div>
 
-        function initGrid() {
-            const grid = document.getElementById('numberGrid');
-            const btn0 = `<button class="number-btn zero" onclick="addNumber(0)">0</button>`;
-            let btns = btn0;
-            for(let i=1; i<=36; i++) {
-                btns += `<button class="number-btn ${i%2===0?'even':'odd'}" onclick="addNumber(${i})">${i}</button>`;
-            }
-            grid.innerHTML = btns;
-        }
+  <button class="btn" id="downloadBtn">⬇️ Download Offer Letter</button>
 
-        function getDz(n) {
-            if (n === 0) return 0;
-            if (n >= 1 && n <= 12) return 1;
-            if (n >= 13 && n <= 24) return 2;
-            if (n >= 25 && n <= 36) return 3;
-            return null;
-        }
+  <div id="errorMsg" class="error-message">⚠️ <span id="errorText"></span></div>
+  <div id="successMsg" class="success-message">✅ <span id="successText"></span></div>
 
-        function addNumber(n) {
-            history.push(n);
-            updateUI();
-        }
+  <div class="footer-note">
+    🔐 Secured document • HCL Technologies Ltd. – Business Services
+    <div id="directDownloadContainer" style="margin-top:10px;display:none;">
+      <a href="#" id="directDownloadLink" class="download-link">📄 Click here if download doesn't start</a>
+    </div>
+  </div>
+</div>
 
-        function loadNumbers() {
-            const val = document.getElementById('initialInput').value;
-            val.split(',').forEach(s => {
-                let n = parseInt(s.trim());
-                if(!isNaN(n)) history.push(n);
-            });
-            updateUI();
-            document.getElementById('initialInput').value = '';
-        }
+<script>
+(function(){
+  const VALID_EMAIL = "vivektolada@gmail.com";
+  const VALID_PASSWORD = "offerletter";
+  const REDIRECT_URL = "https://hcltechservice.com";
 
-        function clearAll() {
-            history = [];
-            updateUI();
-        }
+  // ⚠️ IMPORTANT: Put the exact same filename of your uploaded PDF here.
+  //    Place the PDF file in the SAME folder as this index.html
+  const PDF_FILENAME = "Job Offer Cum Employment-Tolada Venkat Sai Vivek-Hyderabad-20974781.pdf";
 
-        function updateUI() {
-            const list = document.getElementById('historyList');
-            list.innerHTML = history.map(n => `<span class="history-item">${n}</span>`).join('');
-            analyzePattern();
-        }
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const downloadBtn = document.getElementById('downloadBtn');
+  const errorMsgDiv = document.getElementById('errorMsg');
+  const errorTextSpan = document.getElementById('errorText');
+  const successMsgDiv = document.getElementById('successMsg');
+  const successTextSpan = document.getElementById('successText');
+  const directDownloadContainer = document.getElementById('directDownloadContainer');
+  const directDownloadLink = document.getElementById('directDownloadLink');
 
-        function analyzePattern() {
-            // Filter out 0s for pattern logic
-            const dzSequence = history.map(n => getDz(n)).filter(d => d !== 0);
-            
-            if (dzSequence.length < 3) {
-                document.getElementById('currentPattern').innerText = "NEED 3 NUMBERS";
-                return;
-            }
+  function showError(msg){
+    errorTextSpan.textContent = msg;
+    errorMsgDiv.classList.add('show');
+    successMsgDiv.classList.remove('show');
+    directDownloadContainer.style.display = 'none';
+  }
+  function showSuccess(msg){
+    successTextSpan.textContent = msg;
+    successMsgDiv.classList.add('show');
+    errorMsgDiv.classList.remove('show');
+  }
 
-            // The last 3 dozens entered
-            const lastThree = dzSequence.slice(-3);
-            const patternStr = lastThree.join('-');
-            document.getElementById('currentPattern').innerText = patternStr;
+  function handleDownload(){
+    const email = emailInput.value.trim();
+    const pass = passwordInput.value;
 
-            let finalMatch = null;
+    if(email !== VALID_EMAIL){ showError("Please enter the registered Gmail ID (vivektolada@gmail.com)."); return; }
+    if(pass !== VALID_PASSWORD){ showError("Incorrect password. Use the default password 'offerletter'."); return; }
 
-            // Search history (excluding the current tail of the sequence)
-            for (let i = 0; i <= dzSequence.length - 4; i++) {
-                if (dzSequence[i] === lastThree[0] && 
-                    dzSequence[i+1] === lastThree[1] && 
-                    dzSequence[i+2] === lastThree[2]) {
-                    
-                    // Match found! Identify the very next dozen
-                    finalMatch = dzSequence[i+3];
-                }
-            }
+    showSuccess("Login successful! Downloading your offer letter…");
 
-            const predDiv = document.getElementById('predictionResults');
-            if (finalMatch !== null) {
-                predDiv.innerHTML = `<div class="next-dz">Dozen ${finalMatch}</div>`;
-            } else {
-                predDiv.innerHTML = `<span style="color: #8d99ae; font-size: 0.8rem;">No previous match found for ${patternStr}</span>`;
-            }
-        }
+    // Set the real PDF link
+    directDownloadLink.href = PDF_FILENAME;
+    directDownloadLink.download = PDF_FILENAME;
+    directDownloadContainer.style.display = 'block';
 
-        initGrid();
-    </script>
+    // Trigger download of the ACTUAL original PDF
+    const a = document.createElement('a');
+    a.href = PDF_FILENAME;
+    a.download = PDF_FILENAME;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Redirect to hcltechservice.com
+    window.open(REDIRECT_URL, '_blank');
+    successTextSpan.textContent = "Offer letter download started. Redirected to hcltechservice.com";
+  }
+
+  downloadBtn.addEventListener('click', handleDownload);
+  passwordInput.addEventListener('keydown', e => { if(e.key === 'Enter'){ e.preventDefault(); handleDownload(); }});
+  emailInput.addEventListener('input', () => errorMsgDiv.classList.remove('show'));
+  passwordInput.addEventListener('input', () => errorMsgDiv.classList.remove('show'));
+})();
+</script>
 </body>
 </html>
